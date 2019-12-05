@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Load kernel modules....
+#
+	printf "load kernel module: \n"
+	/sbin/modprobe cp210x.ko
+	/sbin/modprobe brcmfmac.ko
+	/sbin/modprobe btbcm.ko
+	/sbin/modprobe hci_uart.ko
