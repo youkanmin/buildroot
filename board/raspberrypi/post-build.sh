@@ -12,3 +12,8 @@ fi
 
 cp board/raspberrypi4/S99modules ${TARGET_DIR}/etc/init.d/S99modules
 chmod 755 ${TARGET_DIR}/etc/init.d/S99modules
+
+if [ -e ${TARGET_DIR}/etc/ssh/sshd_config ]; then
+	sed  -i 's/\#PermitRootLogin prohibit-password/PermitRootLogin yes/' ${TARGET_DIR}/etc/ssh/sshd_config
+	sed  -i 's/\#PermitEmptyPasswords no/PermitEmptyPasswords yes/' ${TARGET_DIR}/etc/ssh/sshd_config
+fi
